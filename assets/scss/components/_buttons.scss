@@ -1,10 +1,10 @@
 .button {
   white-space: nowrap;
   display: inline-block;
-  padding: 10px 14px;
+  padding: 0.5rem 1rem;
   background: $primary;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: $border-radius;
+  font-size: 0.875rem;
   font-weight: normal;
   color: $white;
   text-decoration: none;
