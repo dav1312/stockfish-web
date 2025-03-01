@@ -28,6 +28,7 @@ function createiOSCard(isCurrentOS = false) {
     const header = document.createElement('div');
     header.className = 'card-header d-flex align-items-center';
     header.innerHTML = `
+        <i class="fa-brands fa-apple mr-1"></i>
         <span class="fs-5 font-weight-bold">iOS</span>
         ${isCurrentOS ? '<span class="badge badge-success ml-1">Recommended</span>' : ''}
     `;
@@ -62,7 +63,17 @@ function createDownloadCard(osName, osData, isCurrentOS = false) {
 
     const header = document.createElement('div');
     header.className = 'card-header d-flex align-items-center';
+
+    const iconMap = {
+        'Windows': 'fa-brands fa-windows',
+        'macOS': 'fa-brands fa-apple',
+        'Linux': 'fa-brands fa-linux',
+        'ARM': 'fa-solid fa-microchip'
+    };
+
+    const icon = iconMap[osName] || '';
     header.innerHTML = `
+        ${icon ? `<i class="${icon} mr-1"></i>` : ''}
         <span class="fs-5 font-weight-bold">${osName}</span>
         ${isCurrentOS ? '<span class="badge badge-success ml-1">Recommended</span>' : ''}
     `;
@@ -73,7 +84,7 @@ function createDownloadCard(osName, osData, isCurrentOS = false) {
     // Add first download option (always visible)
     const firstItem = createDownloadItem(firstOption);
     if (isCurrentOS) {
-        firstItem.querySelector('.text-muted').textContent = 'Recommended for most users';
+        firstItem.querySelector('.text-muted').textContent = firstOption.description || 'Recommended for most users';
     }
     body.appendChild(firstItem);
 
@@ -158,7 +169,7 @@ function createDownloadItem(item) {
     div.innerHTML = `
         <div class="mr-1">
             <strong>${item.arch}</strong>
-            <div class="text-muted"></div>
+            <div class="text-muted">${item.description || ''}</div>
         </div>
         <a href="${baseDownloadLink}${item.file}" class="rounded button">Download</a>
     `;
