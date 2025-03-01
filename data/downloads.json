@@ -1,0 +1,118 @@
+{
+    "Windows": {
+        "icon": "fa-brands fa-windows",
+        "options": [
+            {
+                "arch": "AVX2",
+                "file": "windows-x86-64-avx2.zip"
+            },
+            {
+                "arch": "POPCNT",
+                "file": "windows-x86-64-sse41-popcnt.zip"
+            },
+            {
+                "arch": "VNNI-512",
+                "file": "windows-x86-64-vnni512.zip"
+            },
+            {
+                "arch": "VNNI-256",
+                "file": "windows-x86-64-vnni256.zip"
+            },
+            {
+                "arch": "AVX-512",
+                "file": "windows-x86-64-avx512.zip"
+            },
+            {
+                "arch": "BMI2",
+                "file": "windows-x86-64-bmi2.zip"
+            },
+            {
+                "arch": "64-bit",
+                "file": "windows-x86-64.zip"
+            }
+        ]
+    },
+    "ARM": {
+        "icon": "fa-solid fa-microchip",
+        "options": [
+            {
+                "arch": "ARMv8",
+                "file": "android-armv8.tar"
+            },
+            {
+                "arch": "ARMv7",
+                "file": "android-armv7.tar"
+            },
+            {
+                "arch": "ARMv8 Dot Product",
+                "file": "android-armv8-dotprod.tar"
+            },
+            {
+                "arch": "ARMv7 NEON",
+                "file": "android-armv7-neon.tar"
+            }
+        ]
+    },
+    "Linux": {
+        "icon": "fa-brands fa-linux",
+        "options": [
+            {
+                "arch": "AVX2",
+                "file": "ubuntu-x86-64-avx2.tar"
+            },
+            {
+                "arch": "POPCNT",
+                "file": "ubuntu-x86-64-sse41-popcnt.tar"
+            },
+            {
+                "arch": "VNNI-512",
+                "file": "ubuntu-x86-64-vnni512.tar"
+            },
+            {
+                "arch": "VNNI-256",
+                "file": "ubuntu-x86-64-vnni256.tar"
+            },
+            {
+                "arch": "AVX-512",
+                "file": "ubuntu-x86-64-avx512.tar"
+            },
+            {
+                "arch": "BMI2",
+                "file": "ubuntu-x86-64-bmi2.tar"
+            },
+            {
+                "arch": "64-bit",
+                "file": "ubuntu-x86-64.tar"
+            }
+        ]
+    },
+    "macOS": {
+        "icon": "fa-brands fa-apple",
+        "options": [
+            {
+                "arch": "Apple Silicon",
+                "file": "macos-m1-apple-silicon.tar"
+            },
+            {
+                "arch": "POPCNT",
+                "file": "macos-x86-64-sse41-popcnt.tar"
+            },
+            {
+                "arch": "BMI2",
+                "file": "macos-x86-64-bmi2.tar"
+            },
+            {
+                "arch": "AVX2",
+                "file": "macos-x86-64-avx2.tar"
+            },
+            {
+                "arch": "64-bit",
+                "file": "macos-x86-64.tar"
+            }
+        ]
+    },
+    "iOS": {
+        "icon": "fa-brands fa-apple",
+        "options": []
+    }
+}
