@@ -26,7 +26,7 @@
                     {{ partial "download-card" (dict "id" "macos" "title" "macOS" "icon" "fa-brands fa-apple" "osData" $downloads.macOS "footer" "Alternative methods:" "extraContent" (partial "macos-extra.html" .)) }}
 
                     <!-- iOS -->
-                    {{ partial "download-card" (dict "id" "ios" "title" "iOS" "icon" "fa-brands fa-apple" "osData" (dict "icon" "fa-brands fa-apple") "extraContent" (partial "ios-extra.html" .)) }}
+                    {{ partial "download-card" (dict "id" "ios" "title" "iOS" "icon" "fa-brands fa-apple" "extraContent" (partial "ios-extra.html" .)) }}
                 </div>
 
                 {{.Content}}

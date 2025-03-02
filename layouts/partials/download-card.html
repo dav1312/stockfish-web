@@ -11,6 +11,7 @@
             <i class="{{ $icon }} mr-1"></i>
             <h2 class="fs-5 my-0">{{ $title }}</h2>
         </div>
+        {{ if $osData }}
         <div class="card-body py-0">
             {{ $baseUrl := "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-" }}
             {{ range $index, $option := $osData.default }}
@@ -22,21 +23,22 @@
                     <a href="{{ $baseUrl }}{{ $option.file }}" class="rounded button">Download</a>
                 </div>
             {{ end }}
-            <div class="remaining-items hidden">
-                {{ range $index, $option := $osData.remaining }}
-                    <div class="download-item py-1 border-bottom d-flex justify-content-between align-items-center">
-                        <div class="mr-1">
-                            <strong>{{ $option.arch }}</strong>
-                            {{ with $option.description }}<div class="text-muted">{{ . }}</div>{{ end }}
-                        </div>
-                        <a href="{{ $baseUrl }}{{ $option.file }}" class="rounded button">Download</a>
-                    </div>
-                {{ end }}
-            </div>
             {{ if $osData.remaining }}
+                <div class="remaining-items hidden">
+                    {{ range $index, $option := $osData.remaining }}
+                        <div class="download-item py-1 border-bottom d-flex justify-content-between align-items-center">
+                            <div class="mr-1">
+                                <strong>{{ $option.arch }}</strong>
+                                {{ with $option.description }}<div class="text-muted">{{ . }}</div>{{ end }}
+                            </div>
+                            <a href="{{ $baseUrl }}{{ $option.file }}" class="rounded button">Download</a>
+                        </div>
+                    {{ end }}
+                </div>
                 <button class="show-more btn btn-link w-100 py-1 text-center">Show more options</button>
             {{ end }}
         </div>
+        {{ end }}
         {{ with $footer }}
         <div class="card-footer text-muted">
             {{ . | safeHTML }}
