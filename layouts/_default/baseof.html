@@ -58,8 +58,6 @@
   {{ partial "footer.html" . }}
 
   {{ $scripts := resources.Get "js/scripts.js" }}
-  {{ $assets_json := resources.Get "assets.json" }}
-  {{ $assets_json_link := $assets_json.RelPermalink }}
 
   {{ block "footer_js" . }}
   {{ end }}
