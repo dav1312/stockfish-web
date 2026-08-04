@@ -22,9 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const downloadCards = document.getElementById("download-cards");
     if (downloadCards) {
         const userOS = getUserOS();
-        const recommendedCard = document.querySelector(`#${userOS}-card .card`);
-        if (recommendedCard) {
-            recommendedCard.classList.replace("border-dark", "border-success");
+        const recommendedCardContainer = document.getElementById(`${userOS}-card`);
+        if (recommendedCardContainer) {
+            recommendedCardContainer.classList.add("order-first");
+            const recommendedCard = recommendedCardContainer.querySelector(".card");
+            if (recommendedCard) {
+                recommendedCard.classList.replace("border-dark", "border-success");
+            }
         }
     }
 });
