@@ -8,8 +8,8 @@
 {{- $baseUrl := "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-" -}}
 
 <div id="{{ $id }}-card" class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-    <div class="card h-100 w-100 overflow-hidden rounded-lg border-dark p-4 d-flex flex-column">
-        <div class="card-top-section mb-3">
+    <div class="card h-100 w-100 overflow-hidden rounded-lg border-dark d-flex flex-column">
+        <div class="card-header p-3">
             <div class="d-flex align-items-center">
                 <i class="{{ $icon }} fa-2x mr-3 text-primary"></i>
                 <h2 class="h3 font-weight-bold my-0">{{ $title }}</h2>
@@ -20,7 +20,6 @@
 
         <div class="card-body p-0 d-flex flex-column flex-grow-1">
             {{ if $osData }}
-                <!-- Primary Download Button High in Card -->
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="mb-3">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
@@ -30,31 +29,27 @@
 
                 {{ if $osData.remaining }}
                     <div class="remaining-options-container mb-3">
-                        <button class="show-more btn btn-link btn-sm p-0 text-left">Show more options</button>
-                        <div class="remaining-items hidden pt-2 mt-2">
-                            <div class="small font-weight-bold text-muted mb-2">Other Architectures:</div>
-                            {{ range $index, $option := $osData.remaining }}
-                                <div class="download-item py-1 d-flex justify-content-between align-items-center">
-                                    <span class="small font-weight-bold">{{ $option.arch }}</span>
-                                    <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-download btn-sm">Download</a>
-                                </div>
-                            {{ end }}
-                        </div>
+                        {{ range $index, $option := $osData.remaining }}
+                            <div class="download-item py-1 d-flex justify-content-between align-items-center">
+                                <span class="small font-weight-bold">{{ $option.arch }}</span>
+                                <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-download btn-sm">Download</a>
+                            </div>
+                        {{ end }}
                     </div>
                 {{ end }}
             {{ end }}
 
-            {{ with $footer }}
-                <div class="card-footer-heading small text-muted mt-auto pt-2">
-                    {{ . | safeHTML }}
-                </div>
-            {{ end }}
-
-            {{ with $extraContent }}
-                <div class="extra-content w-100 {{ if not $osData }}mt-auto{{ else }}mt-2{{ end }}">
-                    {{ . | safeHTML }}
-                </div>
-            {{ end }}
         </div>
+        {{ with $footer }}
+            <div class="card-footer small text-muted mt-auto pt-2">
+                {{ . | safeHTML }}
+            </div>
+        {{ end }}
+
+        {{ with $extraContent }}
+            <div class="extra-content w-100 {{ if not $osData }}mt-auto{{ else }}mt-2{{ end }}">
+                {{ . | safeHTML }}
+            </div>
+        {{ end }}
     </div>
 </div>

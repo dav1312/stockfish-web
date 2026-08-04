@@ -33,16 +33,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 badgeContainer.appendChild(badge);
             }
         }
-        // Add event listeners for show more buttons
-        document.querySelectorAll('.show-more').forEach(button => {
-            button.addEventListener('click', function() {
-                const items = this.parentElement.querySelector('.remaining-items');
-                if (items) {
-                    items.classList.toggle('hidden');
-                    this.textContent = items.classList.contains('hidden') ?
-                        'Show more options' : 'Show fewer options';
-                }
-            });
-        });
     }
 });
