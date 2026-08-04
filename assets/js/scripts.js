@@ -25,13 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const recommendedCard = document.querySelector(`#${userOS}-card .card`);
         if (recommendedCard) {
             recommendedCard.classList.replace("border-dark", "border-success");
-            const badgeContainer = recommendedCard.querySelector(".recommended-badge-container");
-            if (badgeContainer && !badgeContainer.querySelector(".badge-success")) {
-                const badge = document.createElement("span");
-                badge.className = "badge badge-success font-weight-normal";
-                badge.textContent = "Recommended for your OS";
-                badgeContainer.appendChild(badge);
-            }
         }
     }
 });

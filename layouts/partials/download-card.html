@@ -15,10 +15,9 @@
                 <h2 class="h3 font-weight-bold my-0">{{ $title }}</h2>
                 {{ with $subtitle }}<span class="text-muted small ml-auto">{{ . }}</span>{{ end }}
             </div>
-            <div class="recommended-badge-container mt-2"></div>
         </div>
 
-        <div class="card-body p-0 d-flex flex-column flex-grow-1">
+        <div class="card-body d-flex flex-column flex-grow-1">
             {{ if $osData }}
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="mb-3">
@@ -32,7 +31,7 @@
                         {{ range $index, $option := $osData.remaining }}
                             <div class="download-item py-1 d-flex justify-content-between align-items-center">
                                 <span class="small font-weight-bold">{{ $option.arch }}</span>
-                                <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-download btn-sm">Download</a>
+                                <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-secondary btn-sm">Download</a>
                             </div>
                         {{ end }}
                     </div>
