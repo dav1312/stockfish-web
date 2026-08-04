@@ -25,18 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const recommendedCard = document.querySelector(`#${userOS}-card .card`);
         if (recommendedCard) {
             recommendedCard.classList.replace("border-dark", "border-success");
-            const parent = recommendedCard.parentElement;
-            if (parent) {
-                parent.classList.remove("col-lg-4", "col-md-6");
-                parent.classList.add("col-12");
-                parent.classList.add("order-first");
-            }
-            const cardHeader = recommendedCard.querySelector(".card-header");
-            if (cardHeader) {
+            const titleElement = recommendedCard.querySelector("h2");
+            if (titleElement && !recommendedCard.querySelector(".badge-success")) {
                 const badge = document.createElement("span");
-                badge.className = "badge badge-success mt-2";
+                badge.className = "badge badge-success ml-2 font-weight-normal align-middle";
+                badge.style.fontSize = "0.55em";
                 badge.textContent = "Recommended for your OS";
-                cardHeader.appendChild(badge);
+                titleElement.appendChild(badge);
             }
         }
         // Add event listeners for show more buttons

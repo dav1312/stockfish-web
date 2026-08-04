@@ -3,15 +3,13 @@
 		"default": [
 			{
 				"arch": "x86-64",
-				"file": "windows-x86-64-universal.zip",
-				"description": "Recommended for most users | Intel and AMD 64-bit"
+				"file": "windows-x86-64-universal.zip"
 			}
 		],
 		"remaining": [
 			{
 				"arch": "ARM64",
-				"file": "windows-arm64-universal.zip",
-				"description": "Recommended for ARM64 Windows devices"
+				"file": "windows-arm64-universal.zip"
 			}
 		]
 	},
@@ -19,15 +17,13 @@
 		"default": [
 			{
 				"arch": "Android ARM64",
-				"file": "android-arm64-universal.tar.gz",
-				"description": "Recommended for most modern devices"
+				"file": "android-arm64-universal.tar.gz"
 			}
 		],
 		"remaining": [
 			{
 				"arch": "Android ARMv7 NEON",
-				"file": "android-armv7-neon.tar.gz",
-				"description": "For older 32-bit devices"
+				"file": "android-armv7-neon.tar.gz"
 			}
 		]
 	},
@@ -35,20 +31,17 @@
 		"default": [
 			{
 				"arch": "x86-64",
-				"file": "linux-x86-64-universal.tar.gz",
-				"description": "Recommended for most users | Intel and AMD 64-bit"
+				"file": "linux-x86-64-universal.tar.gz"
 			}
 		],
 		"remaining": [
 			{
 				"arch": "ARM64",
-				"file": "linux-arm64-universal.tar.gz",
-				"description": "Recommended for ARM64 systems"
+				"file": "linux-arm64-universal.tar.gz"
 			},
 			{
 				"arch": "RISC-V 64",
-				"file": "linux-riscv64-universal.tar.gz",
-				"description": "For RISC-V 64-bit systems"
+				"file": "linux-riscv64-universal.tar.gz"
 			}
 		]
 	},
@@ -56,8 +49,7 @@
 		"default": [
 			{
 				"arch": "Universal",
-				"file": "macos-universal.tar.gz",
-				"description": "Recommended for Apple Silicon and Intel Macs"
+				"file": "macos-universal.tar.gz"
 			}
 		]
 	}
