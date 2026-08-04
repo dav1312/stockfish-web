@@ -17,8 +17,8 @@
             </div>
         </div>
 
-        <div class="card-body d-flex flex-column flex-grow-1">
-            {{ if $osData }}
+        {{ if $osData }}
+            <div class="card-body d-flex flex-column flex-grow-1">
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="mb-3">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
@@ -36,9 +36,9 @@
                         {{ end }}
                     </div>
                 {{ end }}
-            {{ end }}
+            </div>
+        {{ end }}
 
-        </div>
         {{ with $footer }}
             <div class="card-footer small text-muted mt-auto">
                 {{ . | safeHTML }}
