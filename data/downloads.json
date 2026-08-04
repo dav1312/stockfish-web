@@ -13,16 +13,16 @@
 			}
 		]
 	},
-	"ARM": {
+	"Android": {
 		"default": [
 			{
-				"arch": "Android ARM64",
+				"arch": "ARM64",
 				"file": "android-arm64-universal.tar.gz"
 			}
 		],
 		"remaining": [
 			{
-				"arch": "Android ARMv7 NEON",
+				"arch": "ARMv7 NEON",
 				"file": "android-armv7-neon.tar.gz"
 			}
 		]

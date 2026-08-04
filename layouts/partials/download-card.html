@@ -38,13 +38,13 @@
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="mt-auto pt-3">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
-                        Download for {{ $title }} ({{ $primaryOption.arch }})
+                        Download ({{ $primaryOption.arch }})
                     </a>
                 </div>
             {{ end }}
 
             {{ with $footer }}
-                <div class="card-footer-heading small text-muted font-weight-bold mt-3 mb-2 {{ if $osData }}border-top pt-3{{ end }}">
+                <div class="card-footer-heading small text-muted mt-3 mb-2">
                     {{ . | safeHTML }}
                 </div>
             {{ end }}
