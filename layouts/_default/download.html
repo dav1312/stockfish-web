@@ -14,13 +14,13 @@
                     {{ $downloads := .Site.Data.downloads }}
                     
                     <!-- Windows -->
-                    {{ partial "download-card" (dict "id" "windows" "title" "Windows" "subtitle" "(x64)" "icon" "fa-brands fa-windows" "osData" $downloads.Windows "footer" (partial "windows-footer.html" .)) }}
+                    {{ partial "download-card" (dict "id" "windows" "title" "Windows" "icon" "fa-brands fa-windows" "osData" $downloads.Windows "footer" (partial "windows-footer.html" .)) }}
 
                     <!-- ARM -->
                     {{ partial "download-card" (dict "id" "arm" "title" "ARM" "icon" "fa-solid fa-microchip" "osData" $downloads.ARM) }}
 
                     <!-- Linux -->
-                    {{ partial "download-card" (dict "id" "linux" "title" "Linux" "subtitle" "(x64)" "icon" "fa-brands fa-linux" "osData" $downloads.Linux) }}
+                    {{ partial "download-card" (dict "id" "linux" "title" "Linux" "icon" "fa-brands fa-linux" "osData" $downloads.Linux) }}
 
                     <!-- macOS -->
                     {{ partial "download-card" (dict "id" "macos" "title" "macOS" "icon" "fa-brands fa-apple" "osData" $downloads.macOS "footer" "Alternative methods:" "extraContent" (partial "macos-extra.html" .)) }}
