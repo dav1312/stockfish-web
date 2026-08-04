@@ -48,7 +48,6 @@
 	"macOS": {
 		"default": [
 			{
-				"arch": "Universal",
 				"file": "macos-universal.tar.gz"
 			}
 		]

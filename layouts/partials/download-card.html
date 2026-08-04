@@ -22,7 +22,7 @@
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="{{ if $osData.remaining }}mb-2{{ end }}">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
-                        Download ({{ $primaryOption.arch }})
+                        Download{{ with $primaryOption.arch }} ({{ . }}){{ end }}
                     </a>
                 </div>
 
