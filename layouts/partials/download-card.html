@@ -10,26 +10,17 @@
 <div id="{{ $id }}-card" class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
     <div class="card h-100 w-100 overflow-hidden rounded-lg border-dark p-4 d-flex flex-column">
         <div class="card-top-section mb-3">
-            <div class="download-icon-wrapper mb-2 text-primary">
-                <i class="{{ $icon }} fa-3x"></i>
+            <div class="d-flex align-items-center">
+                <i class="{{ $icon }} fa-2x mr-3 text-primary"></i>
+                <h2 class="h3 font-weight-bold my-0">{{ $title }}</h2>
+                {{ with $subtitle }}<span class="text-muted small ml-auto">{{ . }}</span>{{ end }}
             </div>
-            <div class="d-flex align-items-baseline justify-content-between flex-wrap">
-                <h2 class="h3 font-weight-bold my-0 d-inline-flex align-items-center">
-                    <span>{{ $title }}</span>
-                </h2>
-                {{ with $subtitle }}<span class="text-muted small">{{ . }}</span>{{ end }}
-            </div>
+            <div class="recommended-badge-container mt-2"></div>
         </div>
 
         <div class="card-body p-0 d-flex flex-column flex-grow-1">
             {{ if $osData }}
                 <div class="options-container mb-3">
-                    {{ range $index, $option := $osData.default }}
-                        <div class="default-download-info mb-2">
-                            <span class="badge badge-secondary">{{ $option.arch }}</span>
-                        </div>
-                    {{ end }}
-
                     {{ if $osData.remaining }}
                         <div class="remaining-items hidden border-top pt-2 mt-2">
                             <div class="small font-weight-bold text-muted mb-2">Other Architectures:</div>
@@ -40,14 +31,14 @@
                                 </div>
                             {{ end }}
                         </div>
-                        <button class="show-more btn btn-link btn-sm p-0 text-left mt-2">Show more options</button>
+                        <button class="show-more btn btn-link btn-sm p-0 text-left mt-1">Show more options</button>
                     {{ end }}
                 </div>
 
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="mt-auto pt-3">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
-                        Download for {{ $title }}
+                        Download for {{ $title }} ({{ $primaryOption.arch }})
                     </a>
                 </div>
             {{ end }}

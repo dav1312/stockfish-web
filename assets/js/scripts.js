@@ -25,13 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const recommendedCard = document.querySelector(`#${userOS}-card .card`);
         if (recommendedCard) {
             recommendedCard.classList.replace("border-dark", "border-success");
-            const titleElement = recommendedCard.querySelector("h2");
-            if (titleElement && !recommendedCard.querySelector(".badge-success")) {
+            const badgeContainer = recommendedCard.querySelector(".recommended-badge-container");
+            if (badgeContainer && !badgeContainer.querySelector(".badge-success")) {
                 const badge = document.createElement("span");
-                badge.className = "badge badge-success ml-2 font-weight-normal align-middle";
-                badge.style.fontSize = "0.55em";
+                badge.className = "badge badge-success font-weight-normal";
                 badge.textContent = "Recommended for your OS";
-                titleElement.appendChild(badge);
+                badgeContainer.appendChild(badge);
             }
         }
         // Add event listeners for show more buttons
