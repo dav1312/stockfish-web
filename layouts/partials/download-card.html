@@ -27,7 +27,7 @@
                 </div>
 
                 {{ if $osData.remaining }}
-                    <div class="remaining-options-container mb-3">
+                    <div class="remaining-options-container">
                         {{ range $index, $option := $osData.remaining }}
                             <div class="download-item py-1 d-flex justify-content-between align-items-center">
                                 <span class="small font-weight-bold">{{ $option.arch }}</span>
@@ -40,13 +40,13 @@
 
         </div>
         {{ with $footer }}
-            <div class="card-footer small text-muted mt-auto pt-2">
+            <div class="card-footer small text-muted mt-auto">
                 {{ . | safeHTML }}
             </div>
         {{ end }}
 
         {{ with $extraContent }}
-            <div class="extra-content w-100 {{ if not $osData }}mt-auto{{ else }}mt-2{{ end }}">
+            <div class="extra-content w-100 p-2">
                 {{ . | safeHTML }}
             </div>
         {{ end }}
