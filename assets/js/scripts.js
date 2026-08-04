@@ -25,13 +25,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const recommendedCard = document.querySelector(`#${userOS}-card .card`);
         if (recommendedCard) {
             recommendedCard.classList.replace("border-dark", "border-success");
-            recommendedCard.parentElement.classList.replace("col-md-6", "col-md-12");
-            recommendedCard.parentElement.classList.add("order-first");
+            const parent = recommendedCard.parentElement;
+            if (parent) {
+                parent.classList.remove("col-lg-4", "col-md-6");
+                parent.classList.add("col-12");
+                parent.classList.add("order-first");
+            }
             const cardHeader = recommendedCard.querySelector(".card-header");
             if (cardHeader) {
                 const badge = document.createElement("span");
-                badge.className = "badge badge-success ml-1";
-                badge.textContent = "Recommended";
+                badge.className = "badge badge-success mt-2";
+                badge.textContent = "Recommended for your OS";
                 cardHeader.appendChild(badge);
             }
         }
@@ -46,4 +50,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
