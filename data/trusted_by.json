@@ -25,6 +25,16 @@
     "url": "https://encroissant.org/"
   },
   {
+    "name": "Chessify",
+    "logo": "images/trusted-by/chessify.svg",
+    "url": "https://chessify.me/"
+  },
+  {
+    "name": "ChessMonitor",
+    "logo": "images/trusted-by/chessmonitor.svg",
+    "url": "https://www.chessmonitor.com/"
+  },
+  {
     "name": "ChessBase",
     "logo": "images/trusted-by/chessbase.svg",
     "url": "https://www.chessbase.com/"
