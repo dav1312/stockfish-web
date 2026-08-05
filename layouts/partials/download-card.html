@@ -11,7 +11,7 @@
     <div class="card h-100 w-100 overflow-hidden rounded-lg border-dark d-flex flex-column">
         <div class="card-header p-3">
             <div class="d-flex align-items-center">
-                <i class="{{ $icon }} fa-2x mr-3 text-primary"></i>
+                <i class="{{ $icon }} fa-2x mr-3"></i>
                 <h2 class="h3 font-weight-bold my-0">{{ $title }}</h2>
                 {{ with $subtitle }}<span class="text-muted small ml-auto">{{ . }}</span>{{ end }}
             </div>
@@ -22,7 +22,7 @@
                 {{ $primaryOption := index $osData.default 0 }}
                 <div class="{{ if $osData.remaining }}mb-2{{ end }}">
                     <a href="{{ $baseUrl }}{{ $primaryOption.file }}" class="button button-download w-100 text-center py-2 d-block rounded font-weight-bold">
-                        Download{{ with $primaryOption.arch }} ({{ . }}){{ end }}
+                        <i class="fa-download fa-solid mr-1"></i> Download{{ with $primaryOption.arch }} ({{ . }}){{ end }}
                     </a>
                 </div>
 
