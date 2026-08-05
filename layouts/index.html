@@ -60,6 +60,25 @@
   </div>
 </div>
 
+{{if .Site.Data.trusted_by}}
+<div class="trusted-by-section pt-5 pb-3">
+  <div class="container">
+    <h2 class="text-center mb-4">Trusted By</h2>
+    <div class="row justify-content-center align-items-center">
+      {{ range .Site.Data.trusted_by }}
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="trusted-by-item text-center d-block text-decoration-none">
+          <div class="trusted-by-logo-wrapper mb-2">
+            <img src="{{ .logo | relURL }}" alt="{{ .name }}" class="trusted-by-logo" loading="lazy" />
+          </div>
+          <span class="trusted-by-name muted small">{{ .name }}</span>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{end}}
 
 {{if .Site.Data.features}}
 <div>

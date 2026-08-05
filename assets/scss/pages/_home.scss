@@ -5,3 +5,45 @@
 .muted {
 	color: $steel;
 }
+
+.trusted-by-section {
+	.trusted-by-item {
+		transition: transform 0.2s ease-in-out;
+
+		&:hover {
+			transform: translateY(-2px);
+
+			.trusted-by-logo {
+				filter: grayscale(0%);
+				opacity: 1;
+			}
+
+			.trusted-by-name {
+				color: inherit;
+			}
+		}
+	}
+
+	.trusted-by-logo-wrapper {
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.trusted-by-logo {
+		max-height: 50px;
+		max-width: 100%;
+		object-fit: contain;
+		filter: grayscale(100%);
+		opacity: 0.65;
+		transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	}
+
+	.trusted-by-name {
+		display: block;
+		font-size: 0.85rem;
+		line-height: 1.2;
+		transition: color 0.2s ease-in-out;
+	}
+}
