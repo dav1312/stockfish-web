@@ -68,11 +68,11 @@
     <div class="row justify-content-center align-items-center">
       {{ range .Site.Data.trusted_by }}
       <div class="col-6 col-sm-4 col-md-3 py-2">
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="trusted-by-item text-center d-block text-decoration-none">
-          <div class="trusted-by-logo-wrapper mb-2">
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="trusted-by-item text-center d-block text-decoration-none">
+          <div class="trusted-by-logo-wrapper mb-2 align-items-center d-flex justify-content-center">
             <img src="{{ .logo | relURL }}" alt="{{ .name }}" class="trusted-by-logo" loading="lazy" />
           </div>
-          <span class="trusted-by-name muted small">{{ .name }}</span>
+          <span class="trusted-by-name muted">{{ .name }}</span>
         </a>
       </div>
       {{ end }}
