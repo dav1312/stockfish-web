@@ -31,8 +31,9 @@
                         {{ $lastIndex := sub (len $osData.remaining) 1 }}
                         {{ range $index, $option := $osData.remaining }}
                             <div class="download-item {{ if eq $index 0 }}pt-0{{ else }}pt-1{{ end }} {{ if eq $index $lastIndex }}pb-0{{ else }}pb-1{{ end }} d-flex justify-content-between align-items-center">
-                                <span class="small font-weight-bold">{{ $option.arch }}</span>
-                                <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-secondary btn-sm">Download</a>
+                                <a href="{{ $baseUrl }}{{ $option.file }}" class="button button-secondary d-block rounded text-center w-100">
+                                    <i class="fa-download fa-solid mr-1"></i> Download{{ with $option.arch }} ({{ . }}){{ end }}
+                                </a>
                             </div>
                         {{ end }}
                     </div>
