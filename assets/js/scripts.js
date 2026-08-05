@@ -18,6 +18,52 @@ function getUserOS() {
     return "";
 }
 
+function initGuiModal() {
+    const modal = document.getElementById("guiModal");
+    if (!modal) return;
+
+    const closeCross = document.getElementById("guiModalCloseCross");
+    const dismissBtn = document.getElementById("guiModalDismissBtn");
+
+    function openModal() {
+        modal.classList.add("show");
+        modal.style.display = "block";
+        modal.removeAttribute("aria-hidden");
+        document.body.classList.add("modal-open");
+
+        let backdrop = document.querySelector(".modal-backdrop");
+        if (!backdrop) {
+            backdrop = document.createElement("div");
+            backdrop.className = "modal-backdrop fade show";
+            document.body.appendChild(backdrop);
+            backdrop.addEventListener("click", closeModal);
+        }
+    }
+
+    function closeModal() {
+        modal.classList.remove("show");
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+
+        const backdrop = document.querySelector(".modal-backdrop");
+        if (backdrop) {
+            backdrop.remove();
+        }
+    }
+
+    if (closeCross) closeCross.addEventListener("click", closeModal);
+    if (dismissBtn) dismissBtn.addEventListener("click", closeModal);
+
+    const downloadLinks = document.querySelectorAll('.download-item .button');
+
+    downloadLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            openModal();
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const downloadCards = document.getElementById("download-cards");
     if (downloadCards) {
@@ -31,4 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+
+    initGuiModal();
 });
