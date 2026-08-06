@@ -93,7 +93,7 @@
         <div class="flow-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
           <i class="fas fa-user fa-2x muted" aria-hidden="true"></i>
         </div>
-        <span class="flow-label fw-bold small muted d-block">Player</span>
+        <span class="small muted d-block">Player</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -106,7 +106,7 @@
           <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left" />
           <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right" />
         </div>
-        <span class="flow-label fw-bold small muted d-block">Chess GUI</span>
+        <span class="small muted d-block">Chess GUI</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -116,10 +116,11 @@
 
       <div class="flow-step text-center">
         <div class="uci-box mb-2 rounded d-flex flex-column justify-content-center align-items-center">
-          <code class="d-block text-muted m-0">position startpos moves e2e4</code>
-          <code class="d-block text-muted m-0">go depth 20</code>
+          <code class="d-block m-0 text-muted text-left">
+            <pre class="m-0 p-0">position startpos<br>go depth 20</pre>
+          </code>
         </div>
-        <span class="flow-label fw-bold small muted d-block">UCI Protocol</span>
+        <span class="small muted d-block">UCI Protocol</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -131,7 +132,7 @@
         <div class="flow-icon-wrapper stockfish-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
           <img src="{{ "images/logo/icon_128x128@2x.webp" | relURL }}" alt="Stockfish Engine" class="stockfish-logo" />
         </div>
-        <span class="flow-label fw-bold small muted d-block">Stockfish</span>
+        <span class="small muted d-block">Stockfish</span>
       </div>
     </div>
   </div>
