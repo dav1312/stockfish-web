@@ -44,3 +44,95 @@
 		transition: color 0.2s ease-in-out;
 	}
 }
+
+.what-is-section {
+	.max-width-600 {
+		max-width: 600px;
+	}
+
+	.flow-step {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	.flow-icon-wrapper {
+		height: 70px;
+		width: 100%;
+	}
+
+	.user-icon-wrapper {
+		color: $steel;
+	}
+
+	.overlapping-logos {
+		position: relative;
+
+		.stacked-logo {
+			width: 44px;
+			height: 44px;
+			object-fit: contain;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+			border-radius: 8px;
+			background: #fff;
+			padding: 4px;
+		}
+
+		.logo-left {
+			transform: rotate(-8deg) translateX(6px);
+			z-index: 1;
+		}
+
+		.logo-right {
+			transform: rotate(8deg) translateX(-6px);
+			z-index: 2;
+		}
+	}
+
+	.uci-box {
+		background-color: #1e1e1e;
+		color: #00ff66;
+		font-family: monospace;
+		border: 1px solid #333;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		height: 70px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.uci-title {
+			color: #aaa;
+			font-size: 0.65rem;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			font-weight: bold;
+		}
+
+		code {
+			color: #00ff66;
+			background: transparent;
+			padding: 0;
+			font-size: 0.68rem;
+			line-height: 1.3;
+		}
+	}
+
+	.stockfish-icon-wrapper {
+		.stockfish-logo {
+			width: 52px;
+			height: 52px;
+			object-fit: contain;
+		}
+	}
+
+	.flow-label {
+		display: block;
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: $steel;
+	}
+
+	.flow-arrow {
+		color: $steel;
+		opacity: 0.6;
+	}
+}
