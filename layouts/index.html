@@ -89,11 +89,11 @@
     </p>
 
     <div class="data-flow-container d-flex flex-column flex-md-row align-items-center justify-content-center">
-      <div class="flow-step text-center">
-        <div class="flow-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
+      <div class="card flow-step text-center">
+        <div class="card-body flow-icon-wrapper">
           <i class="fas fa-user fa-2x muted" aria-hidden="true"></i>
         </div>
-        <span class="small muted d-block">Player</span>
+        <div class="card-footer">Player</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -101,12 +101,12 @@
         <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
-      <div class="flow-step text-center">
-        <div class="flow-icon-wrapper overlapping-logos mb-2 d-flex align-items-center justify-content-center">
+      <div class="card flow-step text-center">
+        <div class="card-body flow-icon-wrapper overlapping-logos d-flex flex-wrap align-items-center justify-content-center p-0">
           <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left" />
           <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right" />
         </div>
-        <span class="small muted d-block">Chess GUI</span>
+        <div class="card-footer">Chess GUI</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -114,13 +114,13 @@
         <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
-      <div class="flow-step text-center">
-        <div class="uci-box mb-2 rounded d-flex flex-column justify-content-center align-items-center">
+      <div class="card flow-step text-center">
+        <div class="card-body flow-icon-wrapper d-flex justify-content-center align-items-center">
           <code class="d-block m-0 text-muted text-left">
             <pre class="m-0 p-0">position startpos<br>go depth 20</pre>
           </code>
         </div>
-        <span class="small muted d-block">UCI Protocol</span>
+        <div class="card-footer">UCI Protocol</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -128,11 +128,11 @@
         <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
-      <div class="flow-step text-center">
-        <div class="flow-icon-wrapper stockfish-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
+      <div class="card flow-step text-center">
+        <div class="card-body flow-icon-wrapper stockfish-icon-wrapper d-flex align-items-center justify-content-center">
           <img src="{{ "images/logo/icon_128x128@2x.webp" | relURL }}" alt="Stockfish Engine" class="stockfish-logo" />
         </div>
-        <span class="small muted d-block">Stockfish</span>
+        <div class="card-footer">Stockfish</div>
       </div>
     </div>
   </div>
