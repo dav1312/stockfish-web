@@ -1,7 +1,6 @@
 ---
 title: "Stockfish"
 description: "Strong open-source chess engine"
-tagline: "Free, open-source, and cross-platform chess engine, trusted by grandmasters and leading chess platforms worldwide."
 intro_image: "images/logo/icon_512x512@2x.webp"
 
 trusted_by_section:
@@ -21,3 +20,5 @@ features_section:
   title: "Why Stockfish?"
   subtitle: "Built for peak performance, community collaboration, and universal accessibility."
 ---
+
+Free, open-source, and cross-platform chess engine, trusted by grandmasters and leading chess platforms worldwide.
