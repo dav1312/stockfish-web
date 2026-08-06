@@ -9,7 +9,7 @@ trusted_by_section:
 
 what_is_section:
   title: "What is Stockfish?"
-  description: "Stockfish is a command-line chess engine. It analyzes chess positions, evaluates them, and communicates with chess apps via the Universal Chess Interface (UCI) protocol."
+  description: "Stockfish is a chess engine. It analyzes chess positions, evaluates them, tries to find the best move, and communicates with chess apps via the UCI protocol."
   steps:
     one: "Player"
     two: "Chess GUI"
