@@ -85,7 +85,7 @@
   <div class="container text-center">
     <h2 class="mb-2">What is Stockfish?</h2>
     <p class="mb-4 muted max-width-600 mx-auto">
-      Stockfish is a command-line chess engine. It calculates move evaluations and communicates with graphical chess applications and websites via the Universal Chess Interface (UCI) protocol.
+      Stockfish is a command-line chess engine. It analyzes chess positions, evaluates them, and communicates with chess apps and websites via the Universal Chess Interface (UCI) protocol.
     </p>
 
     <div class="data-flow-container d-flex flex-column flex-md-row align-items-center justify-content-center">
@@ -93,12 +93,12 @@
         <div class="flow-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
           <i class="fas fa-user fa-2x muted" aria-hidden="true"></i>
         </div>
-        <span class="flow-label fw-bold small muted d-block">User / Player</span>
+        <span class="flow-label fw-bold small muted d-block">Player</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
-        <i class="fas fa-arrows-alt-v fa-arrows-up-down fa-lg d-md-none muted" aria-hidden="true"></i>
-        <i class="fas fa-arrows-alt-h fa-arrows-left-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-down fa-lg d-md-none muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
       <div class="flow-step text-center">
@@ -106,33 +106,32 @@
           <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left" />
           <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right" />
         </div>
-        <span class="flow-label fw-bold small muted d-block">Chess GUI / Website</span>
+        <span class="flow-label fw-bold small muted d-block">Chess GUI</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
-        <i class="fas fa-arrows-alt-v fa-arrows-up-down fa-lg d-md-none muted" aria-hidden="true"></i>
-        <i class="fas fa-arrows-alt-h fa-arrows-left-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-down fa-lg d-md-none muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
       <div class="flow-step text-center">
         <div class="uci-box mb-2 rounded d-flex flex-column justify-content-center align-items-center">
-          <div class="uci-title text-uppercase fw-bold text-muted mb-1">UCI Protocol</div>
-          <code class="d-block text-start text-primary bg-transparent p-0 m-0">position startpos moves e2e4</code>
-          <code class="d-block text-start text-primary bg-transparent p-0 m-0">go depth 20</code>
+          <code class="d-block text-muted m-0">position startpos moves e2e4</code>
+          <code class="d-block text-muted m-0">go depth 20</code>
         </div>
-        <span class="flow-label fw-bold small muted d-block">Communication</span>
+        <span class="flow-label fw-bold small muted d-block">UCI Protocol</span>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
-        <i class="fas fa-arrows-alt-v fa-arrows-up-down fa-lg d-md-none muted" aria-hidden="true"></i>
-        <i class="fas fa-arrows-alt-h fa-arrows-left-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-down fa-lg d-md-none muted" aria-hidden="true"></i>
+        <i class="fas fa-arrow-right fa-lg d-none d-md-inline-block muted" aria-hidden="true"></i>
       </div>
 
       <div class="flow-step text-center">
         <div class="flow-icon-wrapper stockfish-icon-wrapper mb-2 d-flex align-items-center justify-content-center">
           <img src="{{ "images/logo/icon_128x128@2x.webp" | relURL }}" alt="Stockfish Engine" class="stockfish-logo" />
         </div>
-        <span class="flow-label fw-bold small muted d-block">Stockfish Engine</span>
+        <span class="flow-label fw-bold small muted d-block">Stockfish</span>
       </div>
     </div>
   </div>

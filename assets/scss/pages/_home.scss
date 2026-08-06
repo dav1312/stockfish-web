@@ -66,6 +66,7 @@
 		.stacked-logo {
 			width: 44px;
 			height: 44px;
+			padding: 4px;
 		}
 
 		.logo-left {
@@ -81,18 +82,7 @@
 
 	.uci-box {
 		background-color: $gray-900;
-		font-family: monospace;
 		height: 70px;
-
-		.uci-title {
-			font-size: 0.65rem;
-			letter-spacing: 0.5px;
-		}
-
-		code {
-			font-size: 0.68rem;
-			line-height: 1.3;
-		}
 	}
 
 	.stockfish-icon-wrapper {
