@@ -30,7 +30,7 @@
           <span class="clip">{{ .Title }}</span>
         </h1>
         <h1>{{ .Description }}</h1>
-        <div class="tagline">{{ .Content }}</div>
+        <div class="tagline">{{ .Tagline }}</div>
         <div class="actions mb-5">
           <a href="/download/" class="button mb-1">Download</a>
           <a href="https://github.com/official-stockfish/Stockfish" target="_blank" class="button button-secondary">View on GitHub</a>
@@ -63,8 +63,10 @@
 {{if .Site.Data.trusted_by}}
 <div class="trusted-by-section my-5">
   <div class="container text-center mb-4">
+
     <h2 class="mb-2">{{ .Params.trusted_by_section.title }}</h2>
     <p class="mb-2 muted">{{ .Params.trusted_by_section.subtitle }}</p>
+
     <div class="row justify-content-center align-items-center">
       {{ range $index, $item := .Site.Data.trusted_by }}
       <div class="{{ if lt $index 4 }}col-6{{ else }}d-none d-md-block{{ end }} col-md-3 py-2">
@@ -83,10 +85,9 @@
 
 <div class="what-is-section my-5">
   <div class="container text-center">
+
     <h2 class="mb-2">{{ .Params.what_is_section.title }}</h2>
-    <p class="mb-4 muted max-width-600 mx-auto">
-      {{ .Params.what_is_section.description }}
-    </p>
+    <p class="mb-4 muted max-width-600 mx-auto">{{ .Params.what_is_section.subtitle }}</p>
 
     <div class="data-flow-container d-flex flex-column flex-md-row align-items-center justify-content-center">
       <div class="card flow-step text-center">
@@ -139,8 +140,12 @@
 </div>
 
 {{if .Site.Data.features}}
-<div>
-  <div class="container pt-6 pb-6">
+<div class="features-section my-5">
+  <div class="container text-center">
+
+    <h2 class="mb-2">{{ .Params.features_section.title }}</h2>
+    <p class="mb-4 muted">{{ .Params.features_section.subtitle }}</p>
+
     <div class="row justify-content-center">
       {{ range .Site.Data.features }}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
@@ -149,7 +154,7 @@
           <div class="feature-content">
             <p>{{ .description }}</p>
           </div>
-          <a href="{{ .url }}" class="button" target="_blank">{{ .button_text }}</a>
+          <a href="{{ .url }}" class="button" target="_blank" {{ with .button_color }}style="background-color: {{ . }};"{{ end }}>{{ .button_text }}</a>
         </div>
       </div>
       {{end}}

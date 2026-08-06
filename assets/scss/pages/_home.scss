@@ -6,6 +6,13 @@
 	color: $steel;
 }
 
+.trusted-by-section,
+.what-is-section,
+.features-section {
+	z-index: 1;
+	position: relative;
+}
+
 .trusted-by-section {
 	.trusted-by-item {
 		transition: transform 0.2s ease-in-out;

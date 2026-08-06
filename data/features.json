@@ -9,7 +9,8 @@
     "title": "Community-Driven",
     "description": "Developed by a global community of chess enthusiasts and programmers and released under the GPLv3 license, so everyone can read the code, modify it, and contribute back.",
     "url": "https://discord.gg/GWDRS3kU6R",
-    "button_text": "Join our Discord"
+    "button_text": "Join our Discord",
+    "button_color": "#5865F2"
   },
   {
     "title": "Cross-Platform",
