@@ -63,8 +63,8 @@
 {{if .Site.Data.trusted_by}}
 <div class="trusted-by-section pt-5 pt-md-0">
   <div class="container text-center mb-4">
-    <h2 class="mb-2">Trusted Worldwide</h2>
-    <p class="mb-2 muted">Powering analysis for leading platforms and millions of chess players.</p>
+    <h2 class="mb-2">{{ .Params.trusted_by_section.title }}</h2>
+    <p class="mb-2 muted">{{ .Params.trusted_by_section.subtitle }}</p>
     <div class="row justify-content-center align-items-center">
       {{ range .Site.Data.trusted_by }}
       <div class="col-6 col-sm-4 col-md-3 py-2">
@@ -83,9 +83,9 @@
 
 <div class="what-is-section py-5">
   <div class="container text-center">
-    <h2 class="mb-2">What is Stockfish?</h2>
+    <h2 class="mb-2">{{ .Params.what_is_section.title }}</h2>
     <p class="mb-4 muted max-width-600 mx-auto">
-      Stockfish is a command-line chess engine. It analyzes chess positions, evaluates them, and communicates with chess apps and websites via the Universal Chess Interface (UCI) protocol.
+      {{ .Params.what_is_section.description }}
     </p>
 
     <div class="data-flow-container d-flex flex-column flex-md-row align-items-center justify-content-center">
@@ -93,7 +93,7 @@
         <div class="card-body flow-icon-wrapper">
           <i class="fas fa-user fa-2x muted" aria-hidden="true"></i>
         </div>
-        <div class="card-footer">Player</div>
+        <div class="card-footer">{{ .Params.what_is_section.steps.one }}</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -103,10 +103,10 @@
 
       <div class="card flow-step text-center">
         <div class="card-body flow-icon-wrapper overlapping-logos d-flex flex-wrap align-items-center justify-content-center p-0">
-          <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left" />
-          <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right" />
+          <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left rounded" />
+          <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right rounded" />
         </div>
-        <div class="card-footer">Chess GUI</div>
+        <div class="card-footer">{{ .Params.what_is_section.steps.two }}</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -120,7 +120,7 @@
             <pre class="m-0 p-0">position startpos<br>go depth 20</pre>
           </code>
         </div>
-        <div class="card-footer">UCI Protocol</div>
+        <div class="card-footer">{{ .Params.what_is_section.steps.three }}</div>
       </div>
 
       <div class="flow-arrow my-2 my-md-0 mx-md-3">
@@ -132,7 +132,7 @@
         <div class="card-body flow-icon-wrapper stockfish-icon-wrapper d-flex align-items-center justify-content-center">
           <img src="{{ "images/logo/icon_128x128@2x.webp" | relURL }}" alt="Stockfish Engine" class="stockfish-logo" />
         </div>
-        <div class="card-footer">Stockfish</div>
+        <div class="card-footer">{{ .Params.what_is_section.steps.four }}</div>
       </div>
     </div>
   </div>
