@@ -108,7 +108,6 @@
         <div class="card-body flow-icon-wrapper overlapping-logos d-flex flex-wrap align-items-center justify-content-center p-0">
           <img src="{{ "images/trusted-by/chesscom.png" | relURL }}" alt="Chess.com" class="stacked-logo logo-left rounded" />
           <img src="{{ "images/trusted-by/lichess.svg" | relURL }}" alt="Lichess" class="stacked-logo logo-right rounded" />
-          <i class="fa-solid fa-chess-board ml-2"></i>
         </div>
         <div class="card-footer">{{ .Params.what_is_section.steps.two }}</div>
       </div>
@@ -135,7 +134,7 @@
       <div class="card flow-step text-center">
         <div class="card-body flow-icon-wrapper stockfish-icon-wrapper d-flex align-items-center justify-content-center">
           <img src="{{ "images/logo/icon_128x128@2x.webp" | relURL }}" alt="Stockfish Engine" class="stockfish-logo" />
-          <span class="badge badge-light ml-2">Eval: +0.30 | Best Move: e4</span>
+          <span class="badge font-weight-normal muted text-left">Eval: +0.30<br>Best Move: e4</span>
         </div>
         <div class="card-footer">{{ .Params.what_is_section.steps.four }}</div>
       </div>
