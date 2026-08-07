@@ -22,7 +22,7 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="intro align-items-center d-flex justify-content-start mt-0 mt-md-5">
+<div class="intro align-items-center d-flex justify-content-start mt-0 mt-md-5 mb-5">
   <div class="container">
     <div class="row justify-content-start">
       <div class="col-12 col-md-7 col-lg-8 col-xl-7 order-2 order-md-1">
@@ -61,6 +61,7 @@
 </div>
 
 {{if .Site.Data.trusted_by}}
+{{ partial "horizontal-line.html" . }}
 <div class="trusted-by-section my-5">
   <div class="container text-center mb-4">
 
@@ -83,6 +84,7 @@
 </div>
 {{end}}
 
+{{ partial "horizontal-line.html" . }}
 <div class="what-is-section my-5">
   <div class="container text-center">
 
@@ -140,6 +142,7 @@
 </div>
 
 {{if .Site.Data.features}}
+{{ partial "horizontal-line.html" . }}
 <div class="features-section my-5">
   <div class="container text-center">
 
