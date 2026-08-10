@@ -32,7 +32,7 @@ tech_section:
   subtitle: "Built on neural networks, high-performance search, and massive distributed testing."
   features:
     - title: "NNUE Evaluation"
-      description: "Efficiently Updatable Neural Networks (NNUE) provide fast, ultra-precise positional evaluation trained on billions of chess positions."
+      description: "Efficiently Updatable Neural Networks (NNUE) provide fast and precise positional evaluation trained on billions of chess positions."
       icon: "fas fa-brain"
       button_text: "Learn about NNUE"
       url: "https://en.wikipedia.org/wiki/Efficiently_Updatable_Neural_Network"
@@ -44,8 +44,8 @@ tech_section:
     - title: "Fishtest Framework"
       description: "A massive distributed testing framework powered by community CPUs, validating every single code change across millions of test games."
       icon: "fas fa-network-wired"
-      button_text: "Explore Fishtest"
-      url: "https://tests.stockfishchess.org/"
+      button_text: "Contribute"
+      url: "/get-involved/"
 
 features_section:
   title: "Why Stockfish?"
