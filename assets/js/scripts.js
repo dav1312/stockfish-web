@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const userOS = getUserOS();
         const recommendedCardContainer = document.getElementById(`${userOS}-card`);
         if (recommendedCardContainer) {
-            // Synchronously position top standalone card at 50% width
-            recommendedCardContainer.className = "col-12 col-md-6 col-lg-6 mb-4 d-flex align-items-stretch";
+            // Synchronously position top standalone card
+            recommendedCardContainer.className = "col-12 col-md-8 col-lg-6 mb-4 d-flex align-items-stretch";
             recommendedCardContainer.style.order = "-2";
 
             // Insert flex line break so no other OS card sits on the top row
