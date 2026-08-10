@@ -111,23 +111,10 @@
 .interface-section {
 	.badge-platform {
 		background-color: rgba($steel, 0.15);
-		color: inherit;
-		font-weight: 500;
-		font-size: 0.85rem;
-		border: 1px solid rgba($steel, 0.25);
-		border-radius: 20px;
-	}
-
-	.gui-carousel {
-		border: 1px solid rgba($steel, 0.2);
-		background-color: $gray-900;
-		position: relative;
 	}
 
 	.gui-carousel-img {
-		height: 340px;
-		object-fit: cover;
-		object-position: top center;
+		aspect-ratio: 13 / 8;
 	}
 
 	.bg-dark-translucent {

@@ -12,13 +12,10 @@ interface_section:
   subtitle: "Stockfish evaluates the moves and you choose the chess app, GUI, or website you love most."
   slides:
     - title: "Chess.com"
-      subtitle: "Integrated web analysis & cloud engines"
       image: "images/gui/chesscom_gui.webp"
-    - title: "Lichess"
-      subtitle: "Open-source cloud & local browser analysis"
+    - title: "Lichess.org"
       image: "images/gui/lichess_gui.webp"
     - title: "En Croissant"
-      subtitle: "Modern open-source desktop chess GUI"
       image: "images/gui/encroissant_gui.webp"
 
 what_is_section:

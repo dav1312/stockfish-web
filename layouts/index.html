@@ -89,17 +89,19 @@
 <div class="interface-section my-5">
   <div class="container">
     <div class="row align-items-center">
+
       <div class="col-12 col-lg-5 mb-4 mb-lg-0 text-center text-lg-left">
         <h2 class="mb-2">{{ .Params.interface_section.title }}</h2>
-        <p class="lead font-weight-normal mb-3">{{ .Params.interface_section.subtitle }}</p>
+        <p class="mb-2 muted">{{ .Params.interface_section.subtitle }}</p>
+
         <div class="platform-badges d-flex flex-wrap justify-content-center justify-content-lg-start">
-          <span class="badge badge-platform py-2 px-3 mr-2 mb-2"><i class="fas fa-globe mr-1" aria-hidden="true"></i> Web Platforms</span>
-          <span class="badge badge-platform py-2 px-3 mr-2 mb-2"><i class="fas fa-desktop mr-1" aria-hidden="true"></i> Desktop GUIs</span>
-          <span class="badge badge-platform py-2 px-3 mr-2 mb-2"><i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Mobile Apps</span>
+          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-globe mr-1" aria-hidden="true"></i> Web Platforms</span>
+          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-desktop mr-1" aria-hidden="true"></i> Desktop GUIs</span>
+          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Mobile Apps</span>
         </div>
       </div>
       <div class="col-12 col-lg-7">
-        <div id="interfaceCarousel" class="carousel slide gui-carousel shadow-sm rounded overflow-hidden" data-ride="carousel" data-interval="5000">
+        <div id="interfaceCarousel" class="carousel border rounded overflow-hidden" data-ride="carousel" data-interval="5000">
           <ol class="carousel-indicators">
             {{ range $index, $slide := .Params.interface_section.slides }}
             <li data-target="#interfaceCarousel" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}"></li>
@@ -110,8 +112,7 @@
             <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
               <img src="{{ $slide.image | relURL }}" class="d-block w-100 gui-carousel-img" alt="{{ $slide.title }}" loading="lazy" />
               <div class="carousel-caption d-none d-md-block bg-dark-translucent rounded px-3 py-2">
-                <h5 class="m-0 font-weight-bold text-white">{{ $slide.title }}</h5>
-                <small class="text-light">{{ $slide.subtitle }}</small>
+                <h5 class="m-0">{{ $slide.title }}</h5>
               </div>
             </div>
             {{ end }}
