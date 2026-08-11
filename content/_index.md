@@ -27,26 +27,6 @@ what_is_section:
     three: "UCI Protocol"
     four: "Stockfish"
 
-tech_section:
-  title: "Engineered for Peak Strength"
-  subtitle: "Built on neural networks, high-performance search, and massive distributed testing."
-  features:
-    - title: "NNUE Evaluation"
-      description: "Efficiently Updatable Neural Networks (NNUE) provide fast and precise positional evaluation trained on billions of chess positions."
-      icon: "fas fa-brain"
-      button_text: "Learn about NNUE"
-      url: "https://en.wikipedia.org/wiki/Efficiently_Updatable_Neural_Network"
-    - title: "Advanced Search"
-      description: "Highly optimized alpha-beta search with aggressive pruning and deep tactical tree exploration."
-      icon: "fas fa-sitemap"
-      button_text: "View Source Code"
-      url: "https://github.com/official-stockfish/Stockfish"
-    - title: "Fishtest Framework"
-      description: "A massive distributed testing framework powered by community CPUs, validating every single code change across millions of test games."
-      icon: "fas fa-network-wired"
-      button_text: "Contribute"
-      url: "/get-involved/"
-
 features_section:
   title: "Why Stockfish?"
   subtitle: "Built for peak performance, community collaboration, and universal accessibility."

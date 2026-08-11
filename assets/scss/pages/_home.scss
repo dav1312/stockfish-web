@@ -109,10 +109,6 @@
 }
 
 .interface-section {
-	.badge-platform {
-		background-color: rgba($steel, 0.15);
-	}
-
 	.gui-carousel-img {
 		aspect-ratio: 13 / 8;
 	}
@@ -120,15 +116,7 @@
 	.bg-dark-translucent {
 		background: rgba(0, 0, 0, 0.75);
 		backdrop-filter: blur(4px);
-	}
-
-	.carousel-caption {
-		bottom: 1.5rem;
-	}
-}
-
-.tech-section {
-	.feature-icon {
-		color: $green;
+		right: 30%;
+		left: 30%;
 	}
 }

@@ -152,9 +152,9 @@
         <p class="mb-2 muted">{{ .Params.interface_section.subtitle }}</p>
 
         <div class="platform-badges d-flex flex-wrap justify-content-center justify-content-lg-start">
-          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-globe mr-1" aria-hidden="true"></i> Web Platforms</span>
-          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-desktop mr-1" aria-hidden="true"></i> Desktop GUIs</span>
-          <span class="badge badge-platform mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Mobile Apps</span>
+          <span class="badge bg-800 mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-globe mr-1" aria-hidden="true"></i> Web Platforms</span>
+          <span class="badge bg-800 mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-desktop mr-1" aria-hidden="true"></i> Desktop GUIs</span>
+          <span class="badge bg-800 mb-2 mr-1 p-1 rounded-pill"><i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Mobile Apps</span>
         </div>
       </div>
       <div class="col-12 col-lg-7">
@@ -189,44 +189,6 @@
 </div>
 {{ end }}
 
-{{ if .Params.tech_section }}
-{{ partial "horizontal-line.html" . }}
-<div class="tech-section my-5">
-  <div class="container text-center">
-
-    <h2 class="mb-2">{{ .Params.tech_section.title }}</h2>
-    <p class="mb-4 muted">{{ .Params.tech_section.subtitle }}</p>
-
-    <div class="row justify-content-center">
-      {{ range .Params.tech_section.features }}
-      <div class="col-12 col-md-6 col-lg-4 mb-3">
-        <div class="feature h-100 d-flex flex-column justify-content-between">
-          <div>
-            {{ if .icon }}
-            <div class="feature-icon mb-3 text-success">
-              <i class="{{ .icon }} fa-2x" aria-hidden="true"></i>
-            </div>
-            {{ end }}
-            <h2 class="feature-title">{{ .title }}</h2>
-            <div class="feature-content">
-              <p>{{ .description }}</p>
-            </div>
-          </div>
-          {{ if .button_text }}
-          <div class="mt-3">
-            <a href="{{ .url }}" class="button" target="_blank">{{ .button_text }}</a>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-      {{ range $index, $item := .Site.Data.trusted_by }}
-      {{ end }}
-      {{ end }}
-    </div>
-  </div>
-</div>
-{{ end }}
-
 {{if .Site.Data.features}}
 {{ partial "horizontal-line.html" . }}
 <div class="features-section my-5">
@@ -240,14 +202,21 @@
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature h-100 d-flex flex-column justify-content-between">
           <div>
+            {{ if .icon }}
+            <div class="mb-3 text-success">
+              <i class="{{ .icon }} fa-2x" aria-hidden="true"></i>
+            </div>
+            {{ end }}
             <h2 class="feature-title">{{ .title }}</h2>
             <div class="feature-content">
               <p>{{ .description }}</p>
             </div>
           </div>
+          {{ if .button_text }}
           <div class="mt-3">
             <a href="{{ .url }}" class="button" target="_blank" {{ with .button_color }}style="background-color: {{ . }};"{{ end }}>{{ .button_text }}</a>
           </div>
+          {{ end }}
         </div>
       </div>
       {{end}}
