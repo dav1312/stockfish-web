@@ -29,18 +29,18 @@
     "button_text": "Learn about NNUE"
   },
   {
-    "title": "Advanced Search",
-    "description": "Highly optimized alpha-beta search with aggressive pruning and deep tactical tree exploration.",
-    "icon": "fas fa-sitemap",
-    "url": "https://github.com/official-stockfish/Stockfish",
-    "button_text": "View Source Code"
-  },
-  {
     "title": "Fishtest Framework",
     "description": "A massive distributed testing framework powered by community CPUs, validating every single code change across millions of test games.",
     "icon": "fas fa-network-wired",
     "url": "/get-involved/",
     "button_text": "Contribute ♥",
     "button_color": "#DB3F3F"
+  },
+  {
+    "title": "Advanced Search",
+    "description": "Highly optimized alpha-beta search with aggressive pruning and deep tactical tree exploration.",
+    "icon": "fas fa-sitemap",
+    "url": "https://github.com/official-stockfish/Stockfish",
+    "button_text": "View Source Code"
   }
 ]
