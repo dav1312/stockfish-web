@@ -1,0 +1,99 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+{{ define "body_classes" }}page-get-involved{{ end }}
+
+{{ define "main" }}
+<div class="my-5 position-relative" style="z-index: 1;">
+  <div class="container">
+    
+    <!-- Hero Header -->
+    <div class="text-center mb-5 mx-auto" style="max-width: 680px;">
+      <h1 class="mb-3">{{ .Title }}</h1>
+      <p class="muted lead mb-0">{{ .Params.intro | default .Description }}</p>
+    </div>
+
+    <!-- 3-Card Feature Grid -->
+    {{ if .Params.cards }}
+    <div class="row justify-content-center">
+      {{ range .Params.cards }}
+      <div class="col-12 col-lg-4 mb-4">
+        <!-- Reuses the exact `.feature` class from the homepage -->
+        <div class="feature border rounded p-4 h-100 d-flex flex-column justify-content-between">
+          
+          <!-- Top Section -->
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="text-muted">
+                <i class="{{ .icon }} fa-2x" aria-hidden="true"></i>
+              </div>
+              {{ with .badge }}
+              <span class="badge bg-800 text-muted px-2 py-1 font-weight-normal">{{ . }}</span>
+              {{ end }}
+            </div>
+
+            <h2 class="text-body mb-2">{{ .title }}</h2>
+            <div class="feature-content mb-4">
+              <p class="muted mb-0">{{ .description }}</p>
+            </div>
+          </div>
+
+          <!-- Bottom Actions / Links -->
+          <div class="mt-auto">
+            
+            <!-- Primary Action Button -->
+            {{ with .primary_button }}
+            <a href="{{ .url }}" 
+               class="button {{ if .secondary }}button-secondary {{ end }}w-100 text-center d-block mb-3 text-decoration-none" 
+               {{ with .button_color }}style="background-color: {{ . }}; border-color: {{ . }};"{{ end }}
+               target="_blank" 
+               rel="noopener">
+              {{ with .icon }}<i class="{{ . }} mr-1" aria-hidden="true"></i>{{ end }}
+              {{ .text }}
+            </a>
+            {{ end }}
+
+            <!-- Unsigned Windows Note Callout -->
+            {{ with .notice }}
+            <div class="bg-800 border rounded p-2 mb-3 text-left">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-info-circle text-warning mr-2 mt-1" aria-hidden="true"></i>
+                <small class="muted">{{ . | safeHTML }}</small>
+              </div>
+            </div>
+            {{ end }}
+
+            <!-- Secondary Links List -->
+            {{ with .links }}
+            <div class="pt-2 border-top">
+              <ul class="list-unstyled mb-0">
+                {{ range . }}
+                <li class="py-1">
+                  <a href="{{ .url }}" class="muted d-flex align-items-center justify-content-between text-decoration-none" target="_blank" rel="noopener">
+                    <span class="text-truncate mr-2">
+                      {{ with .icon }}<i class="{{ . }} mr-2 fa-fw muted" aria-hidden="true"></i>{{ end }}
+                      <span class="small">{{ .title }}</span>
+                    </span>
+                    <i class="fas fa-arrow-right fa-xs muted" aria-hidden="true"></i>
+                  </a>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+
+          </div>
+
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if .Content }}
+    <div class="content mt-4">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+  </div>
+</div>
+{{ end }}
