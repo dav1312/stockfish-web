@@ -19,6 +19,7 @@
 <meta property="og:description" content="{{ .Description | default .Site.Params.homepage_meta_tags.meta_description }}" />
 
 <meta name="theme-color" content="{{ .Site.Params.homepage_meta_tags.meta_theme_color }}" />
+{{ partial "discord-embed.html" . }}
 {{ end }}
 
 {{ define "main" }}

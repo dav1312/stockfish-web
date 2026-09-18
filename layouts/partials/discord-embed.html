@@ -1,0 +1,100 @@
+{{- $baseUrl := strings.TrimSuffix "/" (.Site.Params.homepage_meta_tags.meta_og_url | default "https://stockfishchess.org") -}}
+
+{{- /* 1. Build dynamic blog post list */ -}}
+{{- $blogLines := slice -}}
+{{- range ( where site.RegularPages "Section" "blog" | first 3 ) -}}
+  {{- $postUrl := printf "%s%s" $baseUrl .RelPermalink -}}
+  {{- $blogLines = $blogLines | append (printf "- %s: [%s](%s)" (.PublishDate.Format "2006-01-02") .Title $postUrl) -}}
+{{- end -}}
+{{- $blogContent := printf "**[Latest from the blog](%s/blog/)**\n%s" $baseUrl (delimit $blogLines "\n") -}}
+
+{{- /* 2. Header tagline and image */ -}}
+{{- $tagline := (.Content | plainify | chomp) | default .Site.Params.homepage_meta_tags.meta_description -}}
+{{- $headerContent := printf "### [%s](%s/)\n%s" .Site.Title $baseUrl $tagline -}}
+{{- $logoUrl := printf "%s/%s" $baseUrl (.Site.Params.logo.desktop | default "images/logo/icon_128x128@2x.webp") -}}
+
+{{- /* 3. Assemble Discord Component Embed payload (Type 17 Container) */ -}}
+{{- $discordData := dict "component" (dict
+  "type" 17
+  "accent_color" 4435306
+  "spoiler" false
+  "components" (slice
+    (dict
+      "type" 9
+      "components" (slice
+        (dict
+          "type" 10
+          "content" $headerContent
+        )
+      )
+      "accessory" (dict
+        "type" 11
+        "media" (dict "url" $logoUrl)
+        "spoiler" false
+      )
+    )
+    (dict
+      "type" 10
+      "content" $blogContent
+    )
+    (dict
+      "type" 1
+      "components" (slice
+        (dict
+          "type" 2
+          "style" 5
+          "url" (printf "%s/get-involved/" $baseUrl)
+          "label" "Contribute"
+          "emoji" (dict "name" "❤")
+          "disabled" false
+        )
+        (dict
+          "type" 2
+          "style" 5
+          "url" (printf "%s/download/" $baseUrl)
+          "label" "Download"
+          "emoji" (dict "name" "⬇️")
+          "disabled" false
+        )
+      )
+    )
+    (dict
+      "type" 1
+      "components" (slice
+        (dict
+          "type" 2
+          "style" 5
+          "url" "https://github.com/official-stockfish/Stockfish"
+          "label" "GitHub"
+          "emoji" (dict "name" "Github" "id" "875249210113531924")
+          "disabled" false
+        )
+        (dict
+          "type" 2
+          "style" 5
+          "url" "https://x.com/stockfishchess"
+          "label" "X / Twitter"
+          "emoji" (dict "name" "social_twitter_logo" "id" "754286161979244586")
+          "disabled" false
+        )
+        (dict
+          "type" 2
+          "style" 5
+          "url" "https://bsky.app/profile/stockfishchess.org"
+          "label" "Bluesky"
+          "emoji" (dict "name" "🦋")
+          "disabled" false
+        )
+        (dict
+          "type" 2
+          "style" 5
+          "url" "https://discord.gg/GWDRS3kU6R"
+          "label" "Discord"
+          "emoji" (dict "name" "social_discord_logo" "id" "754286161962205244")
+          "disabled" false
+        )
+      )
+    )
+  )
+) -}}
+<script id="discord:component-embed" type="application/json">{{ $discordData | jsonify | safeJS }}</script>
