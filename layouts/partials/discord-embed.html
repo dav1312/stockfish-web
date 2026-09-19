@@ -1,5 +1,10 @@
 {{- $baseUrl := strings.TrimSuffix "/" .Site.Params.homepage_meta_tags.meta_og_url -}}
 
+{{- /* Banner */ -}}
+{{- $bannerUrl := printf "%s/images/social/discord_banner.webp" $baseUrl -}}
+{{- $bannerItem := dict "media" (dict "url" $bannerUrl) "description" "Banner" -}}
+{{- $bannerSection := dict "type" 12 "items" (slice $bannerItem) -}}
+
 {{- /* Blog posts */ -}}
 {{- $blogLines := slice -}}
 {{- range ( where site.RegularPages "Section" "blog" | first 3 ) -}}
@@ -24,18 +29,21 @@
 {{- $btnDownload := dict "type" 2 "style" 5 "url" (printf "%s/download/" $baseUrl) "label" "Download" "emoji" (dict "name" "⬇️") -}}
 {{- $rowPrimary := dict "type" 1 "components" (slice $btnContribute $btnDownload) -}}
 
+{{- /* Divider */ -}}
+{{- $divider := dict "type" 14 -}}
+
 {{- /* Action Row 2 */ -}}
 {{- $socialButtons := slice -}}
 {{- range .Site.Data.social -}}
   {{- if and (not .skip) .emoji -}}
-    {{- $btn := dict "type" 2 "style" 5 "url" .link "label" .name "emoji" .emoji -}}
+    {{- $btn := dict "type" 2 "style" 5 "url" .link "emoji" .emoji -}}
     {{- $socialButtons = $socialButtons | append $btn -}}
   {{- end -}}
 {{- end -}}
 {{- $rowSocial := dict "type" 1 "components" $socialButtons -}}
 
 {{- /* Top-level Container */ -}}
-{{- $components := slice $headerSection $blogSection $rowPrimary $rowSocial -}}
+{{- $components := slice $bannerSection $headerSection $blogSection $rowPrimary $divider $rowSocial -}}
 {{- $container := dict "type" 17 "accent_color" 4435306 "components" $components -}}
 {{- $discordData := dict "component" $container -}}
 
