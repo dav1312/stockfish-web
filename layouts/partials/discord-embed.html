@@ -1,8 +1,7 @@
 {{- $baseUrl := strings.TrimSuffix "/" .Site.Params.homepage_meta_tags.meta_og_url -}}
 
 {{- /* Banner */ -}}
-{{- $bannerUrl := printf "%s/images/social/discord_banner.webp" $baseUrl -}}
-{{- $bannerItem := dict "media" (dict "url" $bannerUrl) "description" "Banner" -}}
+{{- $bannerItem := dict "media" (dict "url" "https://i.imgur.com/sgX60CG.png") "description" "Banner" -}}
 {{- $bannerSection := dict "type" 12 "items" (slice $bannerItem) -}}
 
 {{- /* Blog posts */ -}}
