@@ -1,4 +1,4 @@
-{{- $baseUrl := strings.TrimSuffix "/" (.Site.Params.homepage_meta_tags.meta_og_url | default "https://stockfishchess.org") -}}
+{{- $baseUrl := strings.TrimSuffix "/" .Site.Params.homepage_meta_tags.meta_og_url -}}
 
 {{- /* Blog posts */ -}}
 {{- $blogLines := slice -}}
@@ -11,7 +11,7 @@
 {{- /* Header and Logo */ -}}
 {{- $tagline := (.Content | plainify | chomp) | default .Site.Params.homepage_meta_tags.meta_description -}}
 {{- $headerContent := printf "### [%s](%s/)\n%s" .Site.Title $baseUrl $tagline -}}
-{{- $logoUrl := printf "%s/%s" $baseUrl (.Site.Params.logo.desktop | default "images/logo/icon_128x128@2x.webp") -}}
+{{- $logoUrl := printf "%s/%s" $baseUrl .Site.Params.logo.desktop -}}
 
 {{- /* Modular components */ -}}
 {{- $headerStep := dict "type" 10 "content" $headerContent -}}
@@ -20,15 +20,15 @@
 {{- $blogSection := dict "type" 10 "content" $blogContent -}}
 
 {{- /* Action Row 1 */ -}}
-{{- $btnContribute := dict "type" 2 "style" 5 "url" (printf "%s/get-involved/" $baseUrl) "label" "Contribute" "emoji" (dict "name" "❤") "disabled" false -}}
-{{- $btnDownload := dict "type" 2 "style" 5 "url" (printf "%s/download/" $baseUrl) "label" "Download" "emoji" (dict "name" "⬇️") "disabled" false -}}
+{{- $btnContribute := dict "type" 2 "style" 5 "url" (printf "%s/get-involved/" $baseUrl) "label" "Contribute" "emoji" (dict "name" "❤") -}}
+{{- $btnDownload := dict "type" 2 "style" 5 "url" (printf "%s/download/" $baseUrl) "label" "Download" "emoji" (dict "name" "⬇️") -}}
 {{- $rowPrimary := dict "type" 1 "components" (slice $btnContribute $btnDownload) -}}
 
 {{- /* Action Row 2 */ -}}
 {{- $socialButtons := slice -}}
 {{- range .Site.Data.social -}}
   {{- if and (not .skip) .emoji -}}
-    {{- $btn := dict "type" 2 "style" 5 "url" .link "label" .name "emoji" .emoji "disabled" false -}}
+    {{- $btn := dict "type" 2 "style" 5 "url" .link "label" .name "emoji" .emoji -}}
     {{- $socialButtons = $socialButtons | append $btn -}}
   {{- end -}}
 {{- end -}}
